@@ -8,7 +8,7 @@ class Movies:
     def __init__(self):
         '''Nothing Goes on here'''
         
-    def Plot(self, Terms, URL_additions=''):
+    def _Plot_(self, Terms, URL_additions=''):
         Link="http://www.imdb.com/search/text?realm=title&field=plot&q="
         Link+=Terms
         Link+=URL_additions
@@ -26,7 +26,7 @@ class Movies:
         MoviesList = Helper.makeUnique(MoviesList)
         return MoviesList
     
-    def Genre(self, Genre, URL_additions=''):
+    def _Genre_(self, Genre, URL_additions=''):
         Link = 'http://www.imdb.com/genre/'
         Link += Genre
         Link += URL_additions
@@ -44,7 +44,7 @@ class Movies:
         MoviesList = Helper.makeUnique(MoviesList)
         return MoviesList
     
-    def Keyword(self, Keyword, URL_additions=''):
+    def _Keyword_(self, Keyword, URL_additions=''):
         #this class also returns the "Episode" name for some reason
         Link = "http://www.imdb.com/keyword/"
         Link += Keyword.lower()
@@ -64,7 +64,7 @@ class Movies:
         MoviesList = Helper.makeUnique(MoviesList)
         return MoviesList
     
-    def Title(self, movieTitle, URL_additions = ''):
+    def _Title_(self, movieTitle, URL_additions = ''):
         #TODO: add "actors, yearMadeMinimum, and yearMadeMaximum"
         Link = "http://www.imdb.com/find?q="
         Link += movieTitle
