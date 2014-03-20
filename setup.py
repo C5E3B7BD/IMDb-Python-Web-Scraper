@@ -8,6 +8,6 @@ setup(name='IMDbPyScraper',
       author='Will Apodaca',
       author_email='will@apoda.ca',
       url='https://github.com/C5E3B7BD/IMDb-Python-Web-Scraper',
-      packages=['Code'],
+      packages=['IMDbParser'],
       license='GPL v2'
      )
