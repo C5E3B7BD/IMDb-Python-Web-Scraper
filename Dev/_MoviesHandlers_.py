@@ -12,6 +12,7 @@ class Movies:
         Link="http://www.imdb.com/search/text?realm=title&field=plot&q="
         Link+=Terms
         Link+=URL_additions
+        Link = Helpers.sanitize(Link)
         webPage = http.request('GET', Link)
         webPageData = webPage.data
         soup = BeautifulSoup(webPageData)
@@ -30,6 +31,7 @@ class Movies:
         Link = 'http://www.imdb.com/genre/'
         Link += Genre
         Link += URL_additions
+        Link = Helpers.sanitize(Link)
         webPage = http.request('GET', Link)
         webPageData = webPage.data
         soup = BeautifulSoup(webPageData)
@@ -49,6 +51,7 @@ class Movies:
         Link = "http://www.imdb.com/keyword/"
         Link += Keyword.lower()
         Link += URL_additions
+        Link = Helpers.sanitize(Link)
         webPage = http.request('GET', Link)
         webPageData = webPage.data
         soup = BeautifulSoup(webPageData)
@@ -70,6 +73,7 @@ class Movies:
         Link += movieTitle
         Link += "&s=tt"
         Link += URL_additions
+        Link = Helpers.sanitize(Link)
         webPage = http.request('GET', Link)
         webPageData = webPage.data
         soup = BeautifulSoup(webPageData)

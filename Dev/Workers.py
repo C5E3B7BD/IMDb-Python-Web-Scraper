@@ -11,7 +11,15 @@ class Helpers:
        result = []
        for item in seq:
            marker = idfun(item)
+           assert idfun(item) == item
            if marker in seen: continue
            seen[marker] = 1
            result.append(item)
        return result
+    def sanitize(string):
+        import urllib3
+        import urllib
+        #string = string.replace(' ','+')
+        stringSplit = string.split(':')
+        joiner = ''
+        return stringSplit[0] + ":" + (urllib.parse.quote(joiner.join(stringSplit[1:]))).replace('%20','+')

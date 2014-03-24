@@ -7,6 +7,13 @@ class Actor:
     def Age(self, min_birthYear_Date, max_birthYear_Date = str(datetime.date.today()), URL_additions = ''):
         Handler = _ActorsHandlers_.Actors()._Age_(min_birthYear_Date, max_birthYear_Date, URL_additions)
         return Handler
+    def Name(self, name, URL_additions = ''):
+        Handler = _ActorsHandlers_.Actors()._genericName_(name, URL_additions)
+        return Handler
+    def specificName(self, name, URL_additions = ''):
+        Handler = _ActorsHandlers_.Actors()._specificName_(name, URL_additions)
+        return Handler
+        
 class Movie:
     def __init__(self):
         '''Null'''
